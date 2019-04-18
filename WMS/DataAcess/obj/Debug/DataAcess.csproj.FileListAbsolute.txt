@@ -1,0 +1,6 @@
+D:\le quang binh\2019-2020\Bao Cao TN\WMS\DataAcess\bin\Debug\DataAcess.dll.config
+D:\le quang binh\2019-2020\Bao Cao TN\WMS\DataAcess\bin\Debug\DataAcess.dll
+D:\le quang binh\2019-2020\Bao Cao TN\WMS\DataAcess\bin\Debug\DataAcess.pdb
+D:\le quang binh\2019-2020\Bao Cao TN\WMS\DataAcess\obj\Debug\DataAcess.dll
+D:\le quang binh\2019-2020\Bao Cao TN\WMS\DataAcess\obj\Debug\DataAcess.pdb
+D:\le quang binh\2019-2020\Bao Cao TN\WMS\DataAcess\obj\Debug\DataAcess.csprojResolveAssemblyReference.cache
