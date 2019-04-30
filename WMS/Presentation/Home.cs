@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraGrid.Views.Grid;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Presentation
     public partial class Home : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private string ten;
+        
         public Home()
         {
             InitializeComponent();
@@ -88,7 +90,7 @@ namespace Presentation
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             NhapKho frmNhapKho = new NhapKho(ten);
-            frmNhapKho.Name = "NhapKho";
+            frmNhapKho.Name = "NhapKho";           
             ViewChildForm(frmNhapKho);
         }
 
@@ -101,7 +103,7 @@ namespace Presentation
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            XuatKho frmXuatKho = new XuatKho();
+            XuatKho frmXuatKho = new XuatKho(ten);
             frmXuatKho.Name = "XuatKho";
             ViewChildForm(frmXuatKho);
         }
@@ -122,9 +124,16 @@ namespace Presentation
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            BaoCaoThang frmBaoCaoThang = new BaoCaoThang();
-            frmBaoCaoThang.Name = "BaoCaoThang";
-            ViewChildForm(frmBaoCaoThang);
+            BaoCao frmBaoCao = new BaoCao();
+            frmBaoCao.Name = "BaoCao";
+            ViewChildForm(frmBaoCao);
+        }
+
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Dashboards dashboard = new Dashboards();
+            dashboard.Name = "Dashboards";
+            ViewChildForm(dashboard);
         }
     }
 }

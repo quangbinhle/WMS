@@ -33,7 +33,7 @@
             this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.GridTonKho = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewTonKho = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.txtTongTrongLuong = new DevExpress.XtraEditors.TextEdit();
             this.txtSoLuong = new DevExpress.XtraEditors.TextEdit();
@@ -42,7 +42,7 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridTonKho)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTonKho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTrongLuong.Properties)).BeginInit();
@@ -83,22 +83,25 @@
             this.btnRefresh.Size = new System.Drawing.Size(105, 32);
             this.btnRefresh.TabIndex = 2;
             this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // GridTonKho
             // 
             this.GridTonKho.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridTonKho.Location = new System.Drawing.Point(0, 44);
-            this.GridTonKho.MainView = this.gridView1;
+            this.GridTonKho.MainView = this.gridViewTonKho;
             this.GridTonKho.Name = "GridTonKho";
             this.GridTonKho.Size = new System.Drawing.Size(845, 461);
             this.GridTonKho.TabIndex = 3;
             this.GridTonKho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridViewTonKho});
             // 
-            // gridView1
+            // gridViewTonKho
             // 
-            this.gridView1.GridControl = this.GridTonKho;
-            this.gridView1.Name = "gridView1";
+            this.gridViewTonKho.GridControl = this.GridTonKho;
+            this.gridViewTonKho.Name = "gridViewTonKho";
+            this.gridViewTonKho.OptionsView.ShowGroupPanel = false;
+            this.gridViewTonKho.ColumnFilterChanged += new System.EventHandler(this.gridViewTonKho_ColumnFilterChanged);
             // 
             // layoutControl3
             // 
@@ -116,8 +119,10 @@
             // 
             this.txtTongTrongLuong.Location = new System.Drawing.Point(526, 12);
             this.txtTongTrongLuong.Name = "txtTongTrongLuong";
-            this.txtTongTrongLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTrongLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTrongLuong.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtTongTrongLuong.Properties.Appearance.Options.UseFont = true;
+            this.txtTongTrongLuong.Properties.Appearance.Options.UseForeColor = true;
             this.txtTongTrongLuong.Size = new System.Drawing.Size(307, 22);
             this.txtTongTrongLuong.StyleController = this.layoutControl3;
             this.txtTongTrongLuong.TabIndex = 5;
@@ -126,8 +131,10 @@
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(114, 12);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuong.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtSoLuong.Properties.Appearance.Options.UseFont = true;
+            this.txtSoLuong.Properties.Appearance.Options.UseForeColor = true;
             this.txtSoLuong.Size = new System.Drawing.Size(306, 22);
             this.txtSoLuong.StyleController = this.layoutControl3;
             this.txtSoLuong.TabIndex = 4;
@@ -175,9 +182,10 @@
             this.Controls.Add(this.panel1);
             this.Name = "TonKho";
             this.Text = "Tồn kho";
+            this.Load += new System.EventHandler(this.TonKho_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridTonKho)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTonKho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTrongLuong.Properties)).EndInit();
@@ -195,7 +203,7 @@
         private DevExpress.XtraEditors.SimpleButton btnExcel;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private DevExpress.XtraGrid.GridControl GridTonKho;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewTonKho;
         private DevExpress.XtraLayout.LayoutControl layoutControl3;
         private DevExpress.XtraEditors.TextEdit txtTongTrongLuong;
         private DevExpress.XtraEditors.TextEdit txtSoLuong;

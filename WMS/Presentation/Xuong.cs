@@ -59,6 +59,11 @@ namespace Presentation
                 dt.Rows.Add(dr);
             }
             gridControlXuong.DataSource = dt;
+            //Hien thi caption header
+            gridViewXuong.Columns["FactoryCode"].Caption = "Mã xưởng";
+            gridViewXuong.Columns["FactoryName"].Caption = "Tên xưởng";
+            gridViewXuong.Columns["Status"].Caption = "Trạng thái";
+            gridViewXuong.Columns["Note"].Caption = "Ghi chú";
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

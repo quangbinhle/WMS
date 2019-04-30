@@ -64,6 +64,13 @@ namespace Presentation
                 dt.Rows.Add(dr);
             }
             gridControlLoaiRac.DataSource = dt;
+            //Hien thi caption header
+            gridViewLoaiRac.Columns["WasteCode"].Caption = "Mã rác";
+            gridViewLoaiRac.Columns["WasteName"].Caption = "Tên rác";
+            gridViewLoaiRac.Columns["Type"].Caption = "Loại";
+            gridViewLoaiRac.Columns["Status"].Caption = "Trạng thái";
+            gridViewLoaiRac.Columns["Unit"].Caption = "Đơn vị";
+            gridViewLoaiRac.Columns["Note"].Caption = "Ghi chú";
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

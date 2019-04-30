@@ -36,15 +36,6 @@ namespace DataAcess
     partial void InsertFactory(Factory instance);
     partial void UpdateFactory(Factory instance);
     partial void DeleteFactory(Factory instance);
-    partial void InsertStockIn(StockIn instance);
-    partial void UpdateStockIn(StockIn instance);
-    partial void DeleteStockIn(StockIn instance);
-    partial void InsertStockInDetail(StockInDetail instance);
-    partial void UpdateStockInDetail(StockInDetail instance);
-    partial void DeleteStockInDetail(StockInDetail instance);
-    partial void InsertStockOut(StockOut instance);
-    partial void UpdateStockOut(StockOut instance);
-    partial void DeleteStockOut(StockOut instance);
     partial void InsertStockOutDetail(StockOutDetail instance);
     partial void UpdateStockOutDetail(StockOutDetail instance);
     partial void DeleteStockOutDetail(StockOutDetail instance);
@@ -57,9 +48,18 @@ namespace DataAcess
     partial void InsertStorage(Storage instance);
     partial void UpdateStorage(Storage instance);
     partial void DeleteStorage(Storage instance);
-    partial void InsertBarcode(Barcode instance);
-    partial void UpdateBarcode(Barcode instance);
-    partial void DeleteBarcode(Barcode instance);
+    partial void InsertStockIn(StockIn instance);
+    partial void UpdateStockIn(StockIn instance);
+    partial void DeleteStockIn(StockIn instance);
+    partial void InsertStockInDetail(StockInDetail instance);
+    partial void UpdateStockInDetail(StockInDetail instance);
+    partial void DeleteStockInDetail(StockInDetail instance);
+    partial void InsertBarcodeDetail(BarcodeDetail instance);
+    partial void UpdateBarcodeDetail(BarcodeDetail instance);
+    partial void DeleteBarcodeDetail(BarcodeDetail instance);
+    partial void InsertStockOut(StockOut instance);
+    partial void UpdateStockOut(StockOut instance);
+    partial void DeleteStockOut(StockOut instance);
     #endregion
 		
 		public WMSDataContext() : 
@@ -108,30 +108,6 @@ namespace DataAcess
 			}
 		}
 		
-		public System.Data.Linq.Table<StockIn> StockIns
-		{
-			get
-			{
-				return this.GetTable<StockIn>();
-			}
-		}
-		
-		public System.Data.Linq.Table<StockInDetail> StockInDetails
-		{
-			get
-			{
-				return this.GetTable<StockInDetail>();
-			}
-		}
-		
-		public System.Data.Linq.Table<StockOut> StockOuts
-		{
-			get
-			{
-				return this.GetTable<StockOut>();
-			}
-		}
-		
 		public System.Data.Linq.Table<StockOutDetail> StockOutDetails
 		{
 			get
@@ -164,11 +140,35 @@ namespace DataAcess
 			}
 		}
 		
-		public System.Data.Linq.Table<Barcode> Barcodes
+		public System.Data.Linq.Table<StockIn> StockIns
 		{
 			get
 			{
-				return this.GetTable<Barcode>();
+				return this.GetTable<StockIn>();
+			}
+		}
+		
+		public System.Data.Linq.Table<StockInDetail> StockInDetails
+		{
+			get
+			{
+				return this.GetTable<StockInDetail>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BarcodeDetail> BarcodeDetails
+		{
+			get
+			{
+				return this.GetTable<BarcodeDetail>();
+			}
+		}
+		
+		public System.Data.Linq.Table<StockOut> StockOuts
+		{
+			get
+			{
+				return this.GetTable<StockOut>();
 			}
 		}
 	}
@@ -396,456 +396,6 @@ namespace DataAcess
 					this._Status = value;
 					this.SendPropertyChanged("Status");
 					this.OnStatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(50)")]
-		public string Note
-		{
-			get
-			{
-				return this._Note;
-			}
-			set
-			{
-				if ((this._Note != value))
-				{
-					this.OnNoteChanging(value);
-					this.SendPropertyChanging();
-					this._Note = value;
-					this.SendPropertyChanged("Note");
-					this.OnNoteChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StockIn")]
-	public partial class StockIn : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _StockInCode;
-		
-		private string _EmployeeCode;
-		
-		private string _UserID;
-		
-		private System.DateTime _DateIn;
-		
-		private string _Note;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnStockInCodeChanging(string value);
-    partial void OnStockInCodeChanged();
-    partial void OnEmployeeCodeChanging(string value);
-    partial void OnEmployeeCodeChanged();
-    partial void OnUserIDChanging(string value);
-    partial void OnUserIDChanged();
-    partial void OnDateInChanging(System.DateTime value);
-    partial void OnDateInChanged();
-    partial void OnNoteChanging(string value);
-    partial void OnNoteChanged();
-    #endregion
-		
-		public StockIn()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockInCode", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string StockInCode
-		{
-			get
-			{
-				return this._StockInCode;
-			}
-			set
-			{
-				if ((this._StockInCode != value))
-				{
-					this.OnStockInCodeChanging(value);
-					this.SendPropertyChanging();
-					this._StockInCode = value;
-					this.SendPropertyChanged("StockInCode");
-					this.OnStockInCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeCode", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string EmployeeCode
-		{
-			get
-			{
-				return this._EmployeeCode;
-			}
-			set
-			{
-				if ((this._EmployeeCode != value))
-				{
-					this.OnEmployeeCodeChanging(value);
-					this.SendPropertyChanging();
-					this._EmployeeCode = value;
-					this.SendPropertyChanged("EmployeeCode");
-					this.OnEmployeeCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime NOT NULL")]
-		public System.DateTime DateIn
-		{
-			get
-			{
-				return this._DateIn;
-			}
-			set
-			{
-				if ((this._DateIn != value))
-				{
-					this.OnDateInChanging(value);
-					this.SendPropertyChanging();
-					this._DateIn = value;
-					this.SendPropertyChanged("DateIn");
-					this.OnDateInChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(50)")]
-		public string Note
-		{
-			get
-			{
-				return this._Note;
-			}
-			set
-			{
-				if ((this._Note != value))
-				{
-					this.OnNoteChanging(value);
-					this.SendPropertyChanging();
-					this._Note = value;
-					this.SendPropertyChanged("Note");
-					this.OnNoteChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StockInDetail")]
-	public partial class StockInDetail : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _StockInCode;
-		
-		private string _Barcode;
-		
-		private string _Note;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnStockInCodeChanging(string value);
-    partial void OnStockInCodeChanged();
-    partial void OnBarcodeChanging(string value);
-    partial void OnBarcodeChanged();
-    partial void OnNoteChanging(string value);
-    partial void OnNoteChanged();
-    #endregion
-		
-		public StockInDetail()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockInCode", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string StockInCode
-		{
-			get
-			{
-				return this._StockInCode;
-			}
-			set
-			{
-				if ((this._StockInCode != value))
-				{
-					this.OnStockInCodeChanging(value);
-					this.SendPropertyChanging();
-					this._StockInCode = value;
-					this.SendPropertyChanged("StockInCode");
-					this.OnStockInCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Barcode", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Barcode
-		{
-			get
-			{
-				return this._Barcode;
-			}
-			set
-			{
-				if ((this._Barcode != value))
-				{
-					this.OnBarcodeChanging(value);
-					this.SendPropertyChanging();
-					this._Barcode = value;
-					this.SendPropertyChanged("Barcode");
-					this.OnBarcodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NChar(10)")]
-		public string Note
-		{
-			get
-			{
-				return this._Note;
-			}
-			set
-			{
-				if ((this._Note != value))
-				{
-					this.OnNoteChanging(value);
-					this.SendPropertyChanging();
-					this._Note = value;
-					this.SendPropertyChanged("Note");
-					this.OnNoteChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StockOut")]
-	public partial class StockOut : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _StockOutCode;
-		
-		private string _UserID;
-		
-		private System.DateTime _DateOut;
-		
-		private string _RecipientName;
-		
-		private string _IDCard;
-		
-		private string _Note;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnStockOutCodeChanging(string value);
-    partial void OnStockOutCodeChanged();
-    partial void OnUserIDChanging(string value);
-    partial void OnUserIDChanged();
-    partial void OnDateOutChanging(System.DateTime value);
-    partial void OnDateOutChanged();
-    partial void OnRecipientNameChanging(string value);
-    partial void OnRecipientNameChanged();
-    partial void OnIDCardChanging(string value);
-    partial void OnIDCardChanged();
-    partial void OnNoteChanging(string value);
-    partial void OnNoteChanged();
-    #endregion
-		
-		public StockOut()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockOutCode", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string StockOutCode
-		{
-			get
-			{
-				return this._StockOutCode;
-			}
-			set
-			{
-				if ((this._StockOutCode != value))
-				{
-					this.OnStockOutCodeChanging(value);
-					this.SendPropertyChanging();
-					this._StockOutCode = value;
-					this.SendPropertyChanged("StockOutCode");
-					this.OnStockOutCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOut", DbType="DateTime NOT NULL")]
-		public System.DateTime DateOut
-		{
-			get
-			{
-				return this._DateOut;
-			}
-			set
-			{
-				if ((this._DateOut != value))
-				{
-					this.OnDateOutChanging(value);
-					this.SendPropertyChanging();
-					this._DateOut = value;
-					this.SendPropertyChanged("DateOut");
-					this.OnDateOutChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecipientName", DbType="NVarChar(50)")]
-		public string RecipientName
-		{
-			get
-			{
-				return this._RecipientName;
-			}
-			set
-			{
-				if ((this._RecipientName != value))
-				{
-					this.OnRecipientNameChanging(value);
-					this.SendPropertyChanging();
-					this._RecipientName = value;
-					this.SendPropertyChanged("RecipientName");
-					this.OnRecipientNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCard", DbType="VarChar(50)")]
-		public string IDCard
-		{
-			get
-			{
-				return this._IDCard;
-			}
-			set
-			{
-				if ((this._IDCard != value))
-				{
-					this.OnIDCardChanging(value);
-					this.SendPropertyChanging();
-					this._IDCard = value;
-					this.SendPropertyChanged("IDCard");
-					this.OnIDCardChanged();
 				}
 			}
 		}
@@ -1523,13 +1073,329 @@ namespace DataAcess
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Barcode")]
-	public partial class Barcode : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StockIn")]
+	public partial class StockIn : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _Barcode1;
+		private string _StockInCode;
+		
+		private string _EmployeeCode;
+		
+		private string _UserID;
+		
+		private System.DateTime _DateIn;
+		
+		private System.Nullable<double> _TotalWeight;
+		
+		private System.Nullable<int> _Quantity;
+		
+		private string _Note;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnStockInCodeChanging(string value);
+    partial void OnStockInCodeChanged();
+    partial void OnEmployeeCodeChanging(string value);
+    partial void OnEmployeeCodeChanged();
+    partial void OnUserIDChanging(string value);
+    partial void OnUserIDChanged();
+    partial void OnDateInChanging(System.DateTime value);
+    partial void OnDateInChanged();
+    partial void OnTotalWeightChanging(System.Nullable<double> value);
+    partial void OnTotalWeightChanged();
+    partial void OnQuantityChanging(System.Nullable<int> value);
+    partial void OnQuantityChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    #endregion
+		
+		public StockIn()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockInCode", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string StockInCode
+		{
+			get
+			{
+				return this._StockInCode;
+			}
+			set
+			{
+				if ((this._StockInCode != value))
+				{
+					this.OnStockInCodeChanging(value);
+					this.SendPropertyChanging();
+					this._StockInCode = value;
+					this.SendPropertyChanged("StockInCode");
+					this.OnStockInCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeCode", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string EmployeeCode
+		{
+			get
+			{
+				return this._EmployeeCode;
+			}
+			set
+			{
+				if ((this._EmployeeCode != value))
+				{
+					this.OnEmployeeCodeChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeCode = value;
+					this.SendPropertyChanged("EmployeeCode");
+					this.OnEmployeeCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime NOT NULL")]
+		public System.DateTime DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalWeight", DbType="Float")]
+		public System.Nullable<double> TotalWeight
+		{
+			get
+			{
+				return this._TotalWeight;
+			}
+			set
+			{
+				if ((this._TotalWeight != value))
+				{
+					this.OnTotalWeightChanging(value);
+					this.SendPropertyChanging();
+					this._TotalWeight = value;
+					this.SendPropertyChanged("TotalWeight");
+					this.OnTotalWeightChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		public System.Nullable<int> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(50)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StockInDetail")]
+	public partial class StockInDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _StockInCode;
+		
+		private string _Barcode;
+		
+		private string _Note;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnStockInCodeChanging(string value);
+    partial void OnStockInCodeChanged();
+    partial void OnBarcodeChanging(string value);
+    partial void OnBarcodeChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    #endregion
+		
+		public StockInDetail()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockInCode", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string StockInCode
+		{
+			get
+			{
+				return this._StockInCode;
+			}
+			set
+			{
+				if ((this._StockInCode != value))
+				{
+					this.OnStockInCodeChanging(value);
+					this.SendPropertyChanging();
+					this._StockInCode = value;
+					this.SendPropertyChanged("StockInCode");
+					this.OnStockInCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Barcode", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Barcode
+		{
+			get
+			{
+				return this._Barcode;
+			}
+			set
+			{
+				if ((this._Barcode != value))
+				{
+					this.OnBarcodeChanging(value);
+					this.SendPropertyChanging();
+					this._Barcode = value;
+					this.SendPropertyChanged("Barcode");
+					this.OnBarcodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(250)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BarcodeDetail")]
+	public partial class BarcodeDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Barcode;
 		
 		private string _WasteCode;
 		
@@ -1541,7 +1407,7 @@ namespace DataAcess
 		
 		private System.Nullable<System.DateTime> _DateIn;
 		
-		private int _Status;
+		private bool _Status;
 		
 		private string _Note;
 		
@@ -1549,8 +1415,8 @@ namespace DataAcess
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnBarcode1Changing(string value);
-    partial void OnBarcode1Changed();
+    partial void OnBarcodeChanging(string value);
+    partial void OnBarcodeChanged();
     partial void OnWasteCodeChanging(string value);
     partial void OnWasteCodeChanged();
     partial void OnFactoryCodeChanging(string value);
@@ -1561,33 +1427,33 @@ namespace DataAcess
     partial void OnWeighChanged();
     partial void OnDateInChanging(System.Nullable<System.DateTime> value);
     partial void OnDateInChanged();
-    partial void OnStatusChanging(int value);
+    partial void OnStatusChanging(bool value);
     partial void OnStatusChanged();
     partial void OnNoteChanging(string value);
     partial void OnNoteChanged();
     #endregion
 		
-		public Barcode()
+		public BarcodeDetail()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Barcode", Storage="_Barcode1", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Barcode1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Barcode", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Barcode
 		{
 			get
 			{
-				return this._Barcode1;
+				return this._Barcode;
 			}
 			set
 			{
-				if ((this._Barcode1 != value))
+				if ((this._Barcode != value))
 				{
-					this.OnBarcode1Changing(value);
+					this.OnBarcodeChanging(value);
 					this.SendPropertyChanging();
-					this._Barcode1 = value;
-					this.SendPropertyChanged("Barcode1");
-					this.OnBarcode1Changed();
+					this._Barcode = value;
+					this.SendPropertyChanged("Barcode");
+					this.OnBarcodeChanged();
 				}
 			}
 		}
@@ -1692,8 +1558,8 @@ namespace DataAcess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
-		public int Status
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Bit NOT NULL")]
+		public bool Status
 		{
 			get
 			{
@@ -1712,7 +1578,261 @@ namespace DataAcess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(250)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StockOut")]
+	public partial class StockOut : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _StockOutCode;
+		
+		private string _UserID;
+		
+		private System.DateTime _DateOut;
+		
+		private string _RecipientName;
+		
+		private string _IDCard;
+		
+		private string _Company;
+		
+		private System.Nullable<double> _TotalWeight;
+		
+		private System.Nullable<int> _Quantity;
+		
+		private string _Note;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnStockOutCodeChanging(string value);
+    partial void OnStockOutCodeChanged();
+    partial void OnUserIDChanging(string value);
+    partial void OnUserIDChanged();
+    partial void OnDateOutChanging(System.DateTime value);
+    partial void OnDateOutChanged();
+    partial void OnRecipientNameChanging(string value);
+    partial void OnRecipientNameChanged();
+    partial void OnIDCardChanging(string value);
+    partial void OnIDCardChanged();
+    partial void OnCompanyChanging(string value);
+    partial void OnCompanyChanged();
+    partial void OnTotalWeightChanging(System.Nullable<double> value);
+    partial void OnTotalWeightChanged();
+    partial void OnQuantityChanging(System.Nullable<int> value);
+    partial void OnQuantityChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    #endregion
+		
+		public StockOut()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockOutCode", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string StockOutCode
+		{
+			get
+			{
+				return this._StockOutCode;
+			}
+			set
+			{
+				if ((this._StockOutCode != value))
+				{
+					this.OnStockOutCodeChanging(value);
+					this.SendPropertyChanging();
+					this._StockOutCode = value;
+					this.SendPropertyChanged("StockOutCode");
+					this.OnStockOutCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOut", DbType="DateTime NOT NULL")]
+		public System.DateTime DateOut
+		{
+			get
+			{
+				return this._DateOut;
+			}
+			set
+			{
+				if ((this._DateOut != value))
+				{
+					this.OnDateOutChanging(value);
+					this.SendPropertyChanging();
+					this._DateOut = value;
+					this.SendPropertyChanged("DateOut");
+					this.OnDateOutChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecipientName", DbType="NVarChar(50)")]
+		public string RecipientName
+		{
+			get
+			{
+				return this._RecipientName;
+			}
+			set
+			{
+				if ((this._RecipientName != value))
+				{
+					this.OnRecipientNameChanging(value);
+					this.SendPropertyChanging();
+					this._RecipientName = value;
+					this.SendPropertyChanged("RecipientName");
+					this.OnRecipientNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCard", DbType="VarChar(50)")]
+		public string IDCard
+		{
+			get
+			{
+				return this._IDCard;
+			}
+			set
+			{
+				if ((this._IDCard != value))
+				{
+					this.OnIDCardChanging(value);
+					this.SendPropertyChanging();
+					this._IDCard = value;
+					this.SendPropertyChanged("IDCard");
+					this.OnIDCardChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Company", DbType="NVarChar(50)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this.OnCompanyChanging(value);
+					this.SendPropertyChanging();
+					this._Company = value;
+					this.SendPropertyChanged("Company");
+					this.OnCompanyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalWeight", DbType="Float")]
+		public System.Nullable<double> TotalWeight
+		{
+			get
+			{
+				return this._TotalWeight;
+			}
+			set
+			{
+				if ((this._TotalWeight != value))
+				{
+					this.OnTotalWeightChanging(value);
+					this.SendPropertyChanging();
+					this._TotalWeight = value;
+					this.SendPropertyChanged("TotalWeight");
+					this.OnTotalWeightChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		public System.Nullable<int> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(50)")]
 		public string Note
 		{
 			get

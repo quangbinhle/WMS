@@ -16,32 +16,6 @@
       <Column Name="Note" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.StockIn" Member="StockIns">
-    <Type Name="StockIn">
-      <Column Name="StockInCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="EmployeeCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="UserID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Note" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.StockInDetail" Member="StockInDetails">
-    <Type Name="StockInDetail">
-      <Column Name="StockInCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Barcode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Note" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.StockOut" Member="StockOuts">
-    <Type Name="StockOut">
-      <Column Name="StockOutCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="UserID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DateOut" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="RecipientName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="IDCard" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Note" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.StockOutDetail" Member="StockOutDetails">
     <Type Name="StockOutDetail">
       <Column Name="StockOutCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -78,16 +52,47 @@
       <Column Name="Note" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Barcode" Member="Barcodes">
-    <Type Name="Barcode">
-      <Column Name="Barcode" Member="Barcode1" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+  <Table Name="dbo.StockIn" Member="StockIns">
+    <Type Name="StockIn">
+      <Column Name="StockInCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EmployeeCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TotalWeight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StockInDetail" Member="StockInDetails">
+    <Type Name="StockInDetail">
+      <Column Name="StockInCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Barcode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BarcodeDetail" Member="BarcodeDetails">
+    <Type Name="BarcodeDetail">
+      <Column Name="Barcode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="WasteCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="FactoryCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="StorageCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Weigh" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Note" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StockOut" Member="StockOuts">
+    <Type Name="StockOut">
+      <Column Name="StockOutCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOut" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RecipientName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDCard" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TotalWeight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

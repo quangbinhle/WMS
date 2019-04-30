@@ -40,6 +40,7 @@ namespace Presentation
 
         public void DisplayData()
         {
+            
             List<Storage> ListStorage = (from c in dc.Storages
                                          orderby c.StorageCode ascending
                                          select c).ToList();
@@ -62,6 +63,12 @@ namespace Presentation
                 dt.Rows.Add(dr);
             }
             gridControlKho.DataSource = dt;
+            //Hien thi caption header
+            gridViewKho.Columns["StorageCode"].Caption = "Mã kho";
+            gridViewKho.Columns["StorageName"].Caption = "Tên kho";
+            gridViewKho.Columns["Type"].Caption = "Loại";
+            gridViewKho.Columns["Status"].Caption = "Trạng thái";
+            gridViewKho.Columns["Note"].Caption = "Ghi chú";
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

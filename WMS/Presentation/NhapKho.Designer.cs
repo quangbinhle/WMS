@@ -46,15 +46,16 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
-            this.btnXacNhan = new DevExpress.XtraEditors.SimpleButton();
-            this.btnInTacCa = new DevExpress.XtraEditors.SimpleButton();
+            this.btnInvoice = new DevExpress.XtraEditors.SimpleButton();
             this.btnLưu = new DevExpress.XtraEditors.SimpleButton();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.txtGhiChuRAc = new DevExpress.XtraEditors.TextEdit();
             this.txtTrongLuong = new DevExpress.XtraEditors.TextEdit();
             this.txtBarcode = new DevExpress.XtraEditors.TextEdit();
+            this.cbXuong = new DevExpress.XtraEditors.LookUpEdit();
+            this.cbTenRac = new DevExpress.XtraEditors.LookUpEdit();
+            this.cbKho = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -63,19 +64,18 @@
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnInBarcodeDon = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
-            this.GridBarcode = new System.Windows.Forms.DataGridView();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.txtTongTrongLuong = new DevExpress.XtraEditors.TextEdit();
             this.txtSoLuong = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cbXuong = new DevExpress.XtraEditors.LookUpEdit();
-            this.cbTenRac = new DevExpress.XtraEditors.LookUpEdit();
-            this.cbKho = new DevExpress.XtraEditors.LookUpEdit();
+            this.gridControlBarcode = new DevExpress.XtraGrid.GridControl();
+            this.gridViewBarcode = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChuPhien.Properties)).BeginInit();
@@ -100,6 +100,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChuRAc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTrongLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBarcode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbXuong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTenRac.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbKho.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
@@ -108,7 +111,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridBarcode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTrongLuong.Properties)).BeginInit();
@@ -116,9 +118,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbXuong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbTenRac.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbKho.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlBarcode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewBarcode)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -287,7 +288,7 @@
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 52);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(415, 26);
-            this.layoutControlItem5.Text = "Phòng bàn";
+            this.layoutControlItem5.Text = "Phòng ban";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(84, 16);
             // 
             // layoutControlItem6
@@ -314,9 +315,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnExcel);
-            this.panel1.Controls.Add(this.btnXacNhan);
-            this.panel1.Controls.Add(this.btnInTacCa);
+            this.panel1.Controls.Add(this.btnInvoice);
             this.panel1.Controls.Add(this.btnLưu);
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -325,38 +324,17 @@
             this.panel1.Size = new System.Drawing.Size(850, 45);
             this.panel1.TabIndex = 1;
             // 
-            // btnExcel
+            // btnInvoice
             // 
-            this.btnExcel.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcel.Appearance.Options.UseFont = true;
-            this.btnExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.ImageOptions.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(617, 6);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(100, 32);
-            this.btnExcel.TabIndex = 4;
-            this.btnExcel.Text = "Excel";
-            // 
-            // btnXacNhan
-            // 
-            this.btnXacNhan.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacNhan.Appearance.Options.UseFont = true;
-            this.btnXacNhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXacNhan.ImageOptions.Image")));
-            this.btnXacNhan.Location = new System.Drawing.Point(472, 6);
-            this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(100, 32);
-            this.btnXacNhan.TabIndex = 3;
-            this.btnXacNhan.Text = "Xác nhận";
-            // 
-            // btnInTacCa
-            // 
-            this.btnInTacCa.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInTacCa.Appearance.Options.UseFont = true;
-            this.btnInTacCa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInTacCa.ImageOptions.Image")));
-            this.btnInTacCa.Location = new System.Drawing.Point(333, 6);
-            this.btnInTacCa.Name = "btnInTacCa";
-            this.btnInTacCa.Size = new System.Drawing.Size(100, 32);
-            this.btnInTacCa.TabIndex = 2;
-            this.btnInTacCa.Text = "In";
+            this.btnInvoice.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvoice.Appearance.Options.UseFont = true;
+            this.btnInvoice.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInvoice.ImageOptions.Image")));
+            this.btnInvoice.Location = new System.Drawing.Point(346, 6);
+            this.btnInvoice.Name = "btnInvoice";
+            this.btnInvoice.Size = new System.Drawing.Size(100, 32);
+            this.btnInvoice.TabIndex = 4;
+            this.btnInvoice.Text = "Invoice";
+            this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click);
             // 
             // btnLưu
             // 
@@ -417,6 +395,7 @@
             this.txtTrongLuong.Size = new System.Drawing.Size(338, 22);
             this.txtTrongLuong.StyleController = this.layoutControl2;
             this.txtTrongLuong.TabIndex = 5;
+            this.txtTrongLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTrongLuong_KeyPress);
             // 
             // txtBarcode
             // 
@@ -427,6 +406,51 @@
             this.txtBarcode.Size = new System.Drawing.Size(338, 22);
             this.txtBarcode.StyleController = this.layoutControl2;
             this.txtBarcode.TabIndex = 4;
+            // 
+            // cbXuong
+            // 
+            this.cbXuong.Location = new System.Drawing.Point(85, 38);
+            this.cbXuong.Name = "cbXuong";
+            this.cbXuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbXuong.Properties.Appearance.Options.UseFont = true;
+            this.cbXuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbXuong.Properties.NullText = "";
+            this.cbXuong.Properties.PopupSizeable = false;
+            this.cbXuong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.cbXuong.Size = new System.Drawing.Size(338, 22);
+            this.cbXuong.StyleController = this.layoutControl2;
+            this.cbXuong.TabIndex = 6;
+            // 
+            // cbTenRac
+            // 
+            this.cbTenRac.Location = new System.Drawing.Point(85, 64);
+            this.cbTenRac.Name = "cbTenRac";
+            this.cbTenRac.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTenRac.Properties.Appearance.Options.UseFont = true;
+            this.cbTenRac.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbTenRac.Properties.NullText = "";
+            this.cbTenRac.Properties.PopupSizeable = false;
+            this.cbTenRac.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.cbTenRac.Size = new System.Drawing.Size(338, 22);
+            this.cbTenRac.StyleController = this.layoutControl2;
+            this.cbTenRac.TabIndex = 8;
+            // 
+            // cbKho
+            // 
+            this.cbKho.Location = new System.Drawing.Point(500, 38);
+            this.cbKho.Name = "cbKho";
+            this.cbKho.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKho.Properties.Appearance.Options.UseFont = true;
+            this.cbKho.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbKho.Properties.NullText = "";
+            this.cbKho.Properties.PopupSizeable = false;
+            this.cbKho.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.cbKho.Size = new System.Drawing.Size(338, 22);
+            this.cbKho.StyleController = this.layoutControl2;
+            this.cbKho.TabIndex = 7;
             // 
             // layoutControlGroup2
             // 
@@ -511,6 +535,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.simpleButton1);
             this.panel2.Controls.Add(this.btnInBarcodeDon);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnThem);
@@ -519,6 +544,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(850, 45);
             this.panel2.TabIndex = 3;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(472, 6);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(100, 32);
+            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.Text = "Refresh";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btnInBarcodeDon
             // 
@@ -541,6 +578,7 @@
             this.btnXoa.Size = new System.Drawing.Size(100, 32);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -552,15 +590,7 @@
             this.btnThem.Size = new System.Drawing.Size(100, 32);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
-            // 
-            // GridBarcode
-            // 
-            this.GridBarcode.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridBarcode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridBarcode.Location = new System.Drawing.Point(0, 314);
-            this.GridBarcode.Name = "GridBarcode";
-            this.GridBarcode.Size = new System.Drawing.Size(850, 198);
-            this.GridBarcode.TabIndex = 6;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // layoutControl3
             // 
@@ -578,8 +608,11 @@
             // 
             this.txtTongTrongLuong.Location = new System.Drawing.Point(529, 12);
             this.txtTongTrongLuong.Name = "txtTongTrongLuong";
-            this.txtTongTrongLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTrongLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTrongLuong.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtTongTrongLuong.Properties.Appearance.Options.UseFont = true;
+            this.txtTongTrongLuong.Properties.Appearance.Options.UseForeColor = true;
+            this.txtTongTrongLuong.Properties.ReadOnly = true;
             this.txtTongTrongLuong.Size = new System.Drawing.Size(309, 22);
             this.txtTongTrongLuong.StyleController = this.layoutControl3;
             this.txtTongTrongLuong.TabIndex = 5;
@@ -588,8 +621,11 @@
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(114, 12);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuong.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtSoLuong.Properties.Appearance.Options.UseFont = true;
+            this.txtSoLuong.Properties.Appearance.Options.UseForeColor = true;
+            this.txtSoLuong.Properties.ReadOnly = true;
             this.txtSoLuong.Size = new System.Drawing.Size(309, 22);
             this.txtSoLuong.StyleController = this.layoutControl3;
             this.txtSoLuong.TabIndex = 4;
@@ -627,58 +663,33 @@
             this.layoutControlItem15.Text = "Tổng trọng lượng";
             this.layoutControlItem15.TextSize = new System.Drawing.Size(99, 16);
             // 
-            // cbXuong
+            // gridControlBarcode
             // 
-            this.cbXuong.Location = new System.Drawing.Point(85, 38);
-            this.cbXuong.Name = "cbXuong";
-            this.cbXuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbXuong.Properties.Appearance.Options.UseFont = true;
-            this.cbXuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbXuong.Properties.NullText = "";
-            this.cbXuong.Properties.PopupSizeable = false;
-            this.cbXuong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.cbXuong.Size = new System.Drawing.Size(338, 22);
-            this.cbXuong.StyleController = this.layoutControl2;
-            this.cbXuong.TabIndex = 6;
+            this.gridControlBarcode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlBarcode.Location = new System.Drawing.Point(0, 314);
+            this.gridControlBarcode.MainView = this.gridViewBarcode;
+            this.gridControlBarcode.Name = "gridControlBarcode";
+            this.gridControlBarcode.Size = new System.Drawing.Size(850, 152);
+            this.gridControlBarcode.TabIndex = 8;
+            this.gridControlBarcode.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewBarcode});
             // 
-            // cbTenRac
+            // gridViewBarcode
             // 
-            this.cbTenRac.Location = new System.Drawing.Point(85, 64);
-            this.cbTenRac.Name = "cbTenRac";
-            this.cbTenRac.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTenRac.Properties.Appearance.Options.UseFont = true;
-            this.cbTenRac.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbTenRac.Properties.NullText = "";
-            this.cbTenRac.Properties.PopupSizeable = false;
-            this.cbTenRac.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.cbTenRac.Size = new System.Drawing.Size(338, 22);
-            this.cbTenRac.StyleController = this.layoutControl2;
-            this.cbTenRac.TabIndex = 8;
-            // 
-            // cbKho
-            // 
-            this.cbKho.Location = new System.Drawing.Point(500, 38);
-            this.cbKho.Name = "cbKho";
-            this.cbKho.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbKho.Properties.Appearance.Options.UseFont = true;
-            this.cbKho.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbKho.Properties.NullText = "";
-            this.cbKho.Properties.PopupSizeable = false;
-            this.cbKho.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.cbKho.Size = new System.Drawing.Size(338, 22);
-            this.cbKho.StyleController = this.layoutControl2;
-            this.cbKho.TabIndex = 7;
+            this.gridViewBarcode.GridControl = this.gridControlBarcode;
+            this.gridViewBarcode.Name = "gridViewBarcode";
+            this.gridViewBarcode.OptionsBehavior.Editable = false;
+            this.gridViewBarcode.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridViewBarcode.OptionsView.ShowGroupPanel = false;
+            this.gridViewBarcode.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridViewBarcode_RowCellClick);
             // 
             // NhapKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 512);
+            this.Controls.Add(this.gridControlBarcode);
             this.Controls.Add(this.layoutControl3);
-            this.Controls.Add(this.GridBarcode);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.layoutControl2);
             this.Controls.Add(this.panel1);
@@ -710,6 +721,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChuRAc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTrongLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBarcode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbXuong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTenRac.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbKho.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
@@ -718,7 +732,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridBarcode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTrongLuong.Properties)).EndInit();
@@ -726,9 +739,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbXuong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbTenRac.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbKho.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlBarcode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewBarcode)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -737,13 +749,8 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraEditors.TextEdit txtGhiChuPhien;
-        private DevExpress.XtraEditors.TextEdit txtUser;
         private DevExpress.XtraEditors.TextEdit txtPhongBan;
         private DevExpress.XtraEditors.TextEdit txtTenNV;
-        private DevExpress.XtraEditors.TextEdit txtMaNV;
-        private DevExpress.XtraEditors.DateEdit datePN;
-        private DevExpress.XtraEditors.TextEdit txtMaPN;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -752,8 +759,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.SimpleButton btnXacNhan;
-        private DevExpress.XtraEditors.SimpleButton btnInTacCa;
         private DevExpress.XtraEditors.SimpleButton btnLưu;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
@@ -771,16 +776,23 @@
         private DevExpress.XtraEditors.SimpleButton btnInBarcodeDon;
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private DevExpress.XtraEditors.SimpleButton btnThem;
-        private System.Windows.Forms.DataGridView GridBarcode;
-        private DevExpress.XtraEditors.SimpleButton btnExcel;
+        private DevExpress.XtraEditors.SimpleButton btnInvoice;
         private DevExpress.XtraLayout.LayoutControl layoutControl3;
-        private DevExpress.XtraEditors.TextEdit txtTongTrongLuong;
-        private DevExpress.XtraEditors.TextEdit txtSoLuong;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private DevExpress.XtraEditors.LookUpEdit cbXuong;
         private DevExpress.XtraEditors.LookUpEdit cbTenRac;
         private DevExpress.XtraEditors.LookUpEdit cbKho;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        public DevExpress.XtraEditors.TextEdit txtGhiChuPhien;
+        public DevExpress.XtraEditors.TextEdit txtMaNV;
+        public DevExpress.XtraEditors.DateEdit datePN;
+        public DevExpress.XtraEditors.TextEdit txtMaPN;
+        public DevExpress.XtraEditors.TextEdit txtUser;
+        public DevExpress.XtraGrid.GridControl gridControlBarcode;
+        public DevExpress.XtraGrid.Views.Grid.GridView gridViewBarcode;
+        public DevExpress.XtraEditors.TextEdit txtTongTrongLuong;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
+        public DevExpress.XtraEditors.TextEdit txtSoLuong;
     }
 }
