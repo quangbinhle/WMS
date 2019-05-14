@@ -46,7 +46,7 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPhieuXuat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnInvoice = new DevExpress.XtraEditors.SimpleButton();
             this.btnLưu = new DevExpress.XtraEditors.SimpleButton();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -297,7 +297,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnPhieuXuat);
+            this.panel1.Controls.Add(this.btnInvoice);
             this.panel1.Controls.Add(this.btnLưu);
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -306,16 +306,17 @@
             this.panel1.Size = new System.Drawing.Size(842, 44);
             this.panel1.TabIndex = 1;
             // 
-            // btnPhieuXuat
+            // btnInvoice
             // 
-            this.btnPhieuXuat.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhieuXuat.Appearance.Options.UseFont = true;
-            this.btnPhieuXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuXuat.ImageOptions.Image")));
-            this.btnPhieuXuat.Location = new System.Drawing.Point(304, 6);
-            this.btnPhieuXuat.Name = "btnPhieuXuat";
-            this.btnPhieuXuat.Size = new System.Drawing.Size(105, 32);
-            this.btnPhieuXuat.TabIndex = 4;
-            this.btnPhieuXuat.Text = "Phiếu xuất";
+            this.btnInvoice.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvoice.Appearance.Options.UseFont = true;
+            this.btnInvoice.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInvoice.ImageOptions.Image")));
+            this.btnInvoice.Location = new System.Drawing.Point(304, 6);
+            this.btnInvoice.Name = "btnInvoice";
+            this.btnInvoice.Size = new System.Drawing.Size(105, 32);
+            this.btnInvoice.TabIndex = 4;
+            this.btnInvoice.Text = "Invoice";
+            this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click);
             // 
             // btnLưu
             // 
@@ -604,7 +605,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.SimpleButton btnPhieuXuat;
+        private DevExpress.XtraEditors.SimpleButton btnInvoice;
         private DevExpress.XtraEditors.SimpleButton btnLưu;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DataAcess;
+using DevExpress.XtraGrid.Columns;
 
 namespace Presentation
 {
@@ -360,9 +361,121 @@ namespace Presentation
             }
         }
 
-        private void BaoCao_Load(object sender, EventArgs e)
+        private void btnExcel_Click(object sender, EventArgs e)
         {
+            //Creating DataTable
+            DataTable dt = new DataTable();
 
+            //Adding the Columns with gridview devexpress
+            foreach (GridColumn c in gridViewBaoCao.Columns)
+            {
+                dt.Columns.Add(c.FieldName, c.ColumnType);
+            }
+
+            //Adding the Rows with gridview devexpress
+            for (int r = 0; r < gridViewBaoCao.RowCount; r++)
+            {
+                object[] rowValues = new object[dt.Columns.Count];
+                for (int c = 0; c < dt.Columns.Count; c++)
+                {
+                    rowValues[c] = gridViewBaoCao.GetRowCellValue(r, dt.Columns[c].ColumnName);
+                }
+                dt.Rows.Add(rowValues);
+            }
+
+            //Exporting to Excel
+            SaveFileDialog fsave = new SaveFileDialog();
+            //kiem tra duoi 
+            fsave.Filter = "Excel|*.xls|Excel 2010|*.xlsx";
+            fsave.ShowDialog();
+
+            if (fsave.FileName != null)
+            {
+                Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Workbook wb = app.Workbooks.Add(Type.Missing);
+                Microsoft.Office.Interop.Excel._Worksheet sheet = null;
+                try
+                {
+                    sheet = wb.ActiveSheet;
+                    sheet.Name = "WMS_Report";
+                    for (int i = 1; i <= dt.Columns.Count; i++)
+                    {
+                        sheet.Cells[1, i] = dt.Columns[i - 1].Caption;
+                    }
+                    for (int i = 1; i <= dt.Rows.Count; i++)
+                    {
+                        sheet.Cells[1 + i, 1] = dt.Rows[i - 1].ItemArray[0];
+                        sheet.Cells[1 + i, 2] = dt.Rows[i - 1].ItemArray[1];
+                        sheet.Cells[1 + i, 3] = dt.Rows[i - 1].ItemArray[2];
+                        sheet.Cells[1 + i, 4] = dt.Rows[i - 1].ItemArray[3];
+                        sheet.Cells[1 + i, 5] = dt.Rows[i - 1].ItemArray[4];
+                        sheet.Cells[1 + i, 6] = dt.Rows[i - 1].ItemArray[5];
+                        sheet.Cells[1 + i, 7] = dt.Rows[i - 1].ItemArray[6];
+                        sheet.Cells[1 + i, 8] = dt.Rows[i - 1].ItemArray[7];
+                        sheet.Cells[1 + i, 9] = dt.Rows[i - 1].ItemArray[8];
+                        //sheet.Cells[1 + i, 10] = dt.Rows[i - 1].ItemArray[9];
+                        //sheet.Cells[1 + i, 11] = dt.Rows[i - 1].ItemArray[10];
+
+                    }
+                    wb.SaveAs(fsave.FileName);
+                    MessageBox.Show("Xuất dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                finally
+                {
+                    app.Quit();
+                    wb = null;
+                }
+            }
+        }
+
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+            if (rbtnNhapKho.Checked == true && rbtnXuatKho.Checked == false)
+            {
+                List<ReportStockInModel> listrsim = new List<ReportStockInModel>();
+                for (int y = 0; y < gridViewBaoCao.RowCount; y++)
+                {
+                    ReportStockInModel rsim = new ReportStockInModel();
+                    rsim.StockInCode = gridViewBaoCao.GetRowCellValue(y, "StockInCode").ToString();
+                    rsim.User = gridViewBaoCao.GetRowCellValue(y, "User").ToString();
+                    rsim.EmployeeCode = gridViewBaoCao.GetRowCellValue(y, "EmployeeCode").ToString();
+                    rsim.Name = gridViewBaoCao.GetRowCellValue(y, "Name").ToString();
+                    rsim.Dept = gridViewBaoCao.GetRowCellValue(y, "Dept").ToString();
+                    rsim.DateIn = DateTime.Parse(gridViewBaoCao.GetRowCellValue(y, "DateIn").ToString());
+                    rsim.TotalWeigh = double.Parse(gridViewBaoCao.GetRowCellValue(y, "TotalWeigh").ToString());
+                    rsim.Quantity = Int32.Parse(gridViewBaoCao.GetRowCellValue(y, "Quantity").ToString());
+                    rsim.Note = gridViewBaoCao.GetRowCellValue(y, "Note").ToString();
+                    listrsim.Add(rsim);
+                }
+                PrintReportStockIn print = new PrintReportStockIn();
+                print.Print(txtSoLuong.Text, listrsim);
+                print.ShowDialog();
+            }
+            if (rbtnNhapKho.Checked == false && rbtnXuatKho.Checked == true)
+            {
+                List<ReportStockOutModel> listrsom = new List<ReportStockOutModel>();
+                for (int y = 0; y < gridViewBaoCao.RowCount; y++)
+                {
+                    ReportStockOutModel rsom = new ReportStockOutModel();
+                    rsom.StockOutCode = gridViewBaoCao.GetRowCellValue(y, "StockOutCode").ToString();
+                    rsom.User = gridViewBaoCao.GetRowCellValue(y, "User").ToString();
+                    rsom.DateOut = DateTime.Parse(gridViewBaoCao.GetRowCellValue(y, "DateOut").ToString());
+                    rsom.RecipientName = gridViewBaoCao.GetRowCellValue(y, "RecipientName").ToString();
+                    rsom.IDCard = gridViewBaoCao.GetRowCellValue(y, "IDCard").ToString();
+                    rsom.Company = gridViewBaoCao.GetRowCellValue(y, "Company").ToString();
+                    rsom.TotalWeigh = double.Parse(gridViewBaoCao.GetRowCellValue(y, "TotalWeigh").ToString());
+                    rsom.Quantity = Int32.Parse(gridViewBaoCao.GetRowCellValue(y, "Quantity").ToString());
+                    rsom.Note = gridViewBaoCao.GetRowCellValue(y, "Note").ToString();
+                    listrsom.Add(rsom);
+                }
+                PrintReportStockOut print = new PrintReportStockOut();
+                print.Print(txtSoLuong.Text, listrsom);
+                print.ShowDialog();
+            }
         }
     }
 }

@@ -224,7 +224,11 @@ D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.Ho
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.Kho.resources
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.LoaiRac.resources
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.NhapKho.resources
+D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.PrintBarcode.resources
+D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.PrintInventory.resources
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.PrintInvoiceStockIn.resources
+D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.PrintInvoiceStockOut.resources
+D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.PrintReportStockIn.resources
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.Properties.Resources.resources
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.QLNhapKho.resources
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.QLXuatKho.resources
@@ -236,3 +240,4 @@ D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.cs
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.exe.licenses
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.exe
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.pdb
+D:\le quang binh\2019-2020\Bao Cao TN\WMS\Presentation\obj\Debug\Presentation.PrintReportStockOut.resources

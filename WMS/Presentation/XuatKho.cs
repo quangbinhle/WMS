@@ -302,5 +302,46 @@ namespace Presentation
                 MessageBox.Show("Lưu phiên xuất kho thành công", "Thông báo", MessageBoxButtons.OK);
             }
         }
+
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+            //dua du lieu vao model
+            var model = (from so in dc.StockOuts
+                         join sod in dc.StockOutDetails on so.StockOutCode equals sod.StockOutCode
+                         join bar in dc.BarcodeDetails on sod.Barcode equals bar.Barcode                         
+                         join w in dc.Wastes on bar.WasteCode equals w.WasteCode
+                         where (sod.StockOutCode == txtMaPX.Text)
+                         select new
+                         {
+                             sod.Barcode,
+                             w.WasteName,
+                             w.Type,
+                             bar.Weigh,
+                             w.Unit,
+                             bar.Note,
+                             so.Quantity,
+                             so.TotalWeight
+                         }).ToList();
+            List<StockOutReportModel> listsorm = new List<StockOutReportModel>();
+            foreach (var item1 in model)
+            {
+                StockOutReportModel sorm = new StockOutReportModel();
+                sorm.Barcode = item1.Barcode;
+                sorm.WasteName = item1.WasteName;
+                sorm.Type = item1.Type;
+                sorm.Weigh = item1.Weigh;
+                sorm.Unit = item1.Unit;
+                sorm.Note = item1.Note;
+                sorm.Quantity = item1.Quantity;
+                sorm.TotalWeigh = item1.TotalWeight;
+                listsorm.Add(sorm);
+            }
+
+            StockOut model1 = dc.StockOuts.Where(x => x.StockOutCode == txtMaPX.Text).SingleOrDefault();
+
+            PrintInvoiceStockOut print = new PrintInvoiceStockOut();
+            print.PrintInvoice(model1, listsorm);
+            print.ShowDialog();
+        }
     }
 }

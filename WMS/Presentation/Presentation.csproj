@@ -72,6 +72,11 @@
     <Reference Include="DevExpress.XtraRichEdit.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeMap.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -136,11 +141,41 @@
     <Compile Include="NhapKho.Designer.cs">
       <DependentUpon>NhapKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintBarcode.Designer.cs">
+      <DependentUpon>PrintBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintInventory.Designer.cs">
+      <DependentUpon>PrintInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrintInvoiceStockIn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PrintInvoiceStockIn.Designer.cs">
       <DependentUpon>PrintInvoiceStockIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintInvoiceStockOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintInvoiceStockOut.Designer.cs">
+      <DependentUpon>PrintInvoiceStockOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintReportStockIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintReportStockIn.Designer.cs">
+      <DependentUpon>PrintReportStockIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintReportStockOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintReportStockOut.Designer.cs">
+      <DependentUpon>PrintReportStockOut.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,8 +239,23 @@
     <EmbeddedResource Include="NhapKho.resx">
       <DependentUpon>NhapKho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintBarcode.resx">
+      <DependentUpon>PrintBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintInventory.resx">
+      <DependentUpon>PrintInventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrintInvoiceStockIn.resx">
       <DependentUpon>PrintInvoiceStockIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintInvoiceStockOut.resx">
+      <DependentUpon>PrintInvoiceStockOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintReportStockIn.resx">
+      <DependentUpon>PrintReportStockIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintReportStockOut.resx">
+      <DependentUpon>PrintReportStockOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -236,6 +286,7 @@
       <DependentUpon>Xuong.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -40,8 +40,11 @@
     <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGauges.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -57,13 +60,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarcodeModel.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="InventoryModel.cs" />
+    <Compile Include="InventoryReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InventoryReport.Designer.cs">
+      <DependentUpon>InventoryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintBarcodeReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PrintBarcodeReport.Designer.cs">
+      <DependentUpon>PrintBarcodeReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ReportStockIn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportStockIn.Designer.cs">
+      <DependentUpon>ReportStockIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportStockInModel.cs" />
+    <Compile Include="ReportStockOut.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportStockOut.Designer.cs">
+      <DependentUpon>ReportStockOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportStockOutModel.cs" />
     <Compile Include="StockInInvoicePara.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -72,6 +103,14 @@
     </Compile>
     <Compile Include="StockInModel.cs" />
     <Compile Include="StockInReportModel.cs" />
+    <Compile Include="StockOutInvoicePara.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StockOutInvoicePara.Designer.cs">
+      <DependentUpon>StockOutInvoicePara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockOutModel.cs" />
+    <Compile Include="StockOutReportModel.cs" />
     <Compile Include="WMS.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,9 +138,24 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="InventoryReport.resx">
+      <DependentUpon>InventoryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintBarcodeReport.resx">
+      <DependentUpon>PrintBarcodeReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="ReportStockIn.resx">
+      <DependentUpon>ReportStockIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportStockOut.resx">
+      <DependentUpon>ReportStockOut.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StockInInvoicePara.resx">
       <DependentUpon>StockInInvoicePara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockOutInvoicePara.resx">
+      <DependentUpon>StockOutInvoicePara.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -926,7 +926,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "PrintInvoiceStockIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Print";
+            this.Text = "In phiếu nhập";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).EndInit();

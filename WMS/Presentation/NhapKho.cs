@@ -407,5 +407,27 @@ namespace Presentation
             print.PrintInvoice(txtMaPN.Text, listsirm);
             print.ShowDialog();
         }
+
+        private void btnInBarcodeDon_Click(object sender, EventArgs e)
+        {
+            //lay danh sach barcode
+            var model = (from si in dc.StockIns
+                         join sid in dc.StockInDetails on si.StockInCode equals sid.StockInCode
+                         where si.StockInCode == txtMaPN.Text
+                         select new
+                         {
+                             sid.Barcode
+                         }).ToList();                         
+            List <BarcodeModel> listbm = new List<BarcodeModel>();
+            foreach (var item2 in model)
+            {
+                BarcodeModel barmodel = new BarcodeModel();
+                barmodel.barcode = item2.Barcode;
+                listbm.Add(barmodel);
+            }
+            PrintBarcode print = new PrintBarcode();
+            print.Print(listbm);
+            print.ShowDialog();
+        }
     }
 }

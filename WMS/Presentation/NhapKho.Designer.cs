@@ -567,6 +567,7 @@
             this.btnInBarcodeDon.Size = new System.Drawing.Size(100, 32);
             this.btnInBarcodeDon.TabIndex = 3;
             this.btnInBarcodeDon.Text = "In";
+            this.btnInBarcodeDon.Click += new System.EventHandler(this.btnInBarcodeDon_Click);
             // 
             // btnXoa
             // 

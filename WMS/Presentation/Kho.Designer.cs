@@ -78,7 +78,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(850, 98);
+            this.layoutControl1.Size = new System.Drawing.Size(777, 98);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -93,7 +93,7 @@
             "Chất thải nguy hại"});
             this.cbLoaiKho.Location = new System.Drawing.Point(88, 38);
             this.cbLoaiKho.Name = "cbLoaiKho";
-            this.cbLoaiKho.Size = new System.Drawing.Size(334, 24);
+            this.cbLoaiKho.Size = new System.Drawing.Size(298, 24);
             this.cbLoaiKho.TabIndex = 11;
             // 
             // groupBox1
@@ -101,9 +101,9 @@
             this.groupBox1.Controls.Add(this.rbtnKhoa);
             this.groupBox1.Controls.Add(this.rbtnKichHoat);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(502, 38);
+            this.groupBox1.Location = new System.Drawing.Point(466, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(336, 21);
+            this.groupBox1.Size = new System.Drawing.Size(299, 21);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
@@ -137,17 +137,17 @@
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGhiChu.Properties.Appearance.Options.UseFont = true;
-            this.txtGhiChu.Size = new System.Drawing.Size(750, 22);
+            this.txtGhiChu.Size = new System.Drawing.Size(677, 22);
             this.txtGhiChu.StyleController = this.layoutControl1;
             this.txtGhiChu.TabIndex = 9;
             // 
             // txtTenKho
             // 
-            this.txtTenKho.Location = new System.Drawing.Point(502, 12);
+            this.txtTenKho.Location = new System.Drawing.Point(466, 12);
             this.txtTenKho.Name = "txtTenKho";
             this.txtTenKho.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKho.Properties.Appearance.Options.UseFont = true;
-            this.txtTenKho.Size = new System.Drawing.Size(336, 22);
+            this.txtTenKho.Size = new System.Drawing.Size(299, 22);
             this.txtTenKho.StyleController = this.layoutControl1;
             this.txtTenKho.TabIndex = 5;
             // 
@@ -157,7 +157,7 @@
             this.txtMaKho.Name = "txtMaKho";
             this.txtMaKho.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaKho.Properties.Appearance.Options.UseFont = true;
-            this.txtMaKho.Size = new System.Drawing.Size(334, 22);
+            this.txtMaKho.Size = new System.Drawing.Size(298, 22);
             this.txtMaKho.StyleController = this.layoutControl1;
             this.txtMaKho.TabIndex = 4;
             // 
@@ -172,7 +172,7 @@
             this.cboLoaiKho,
             this.layoutControlItem2});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(850, 98);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(777, 98);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -182,7 +182,7 @@
             this.layoutControlItem1.Control = this.txtMaKho;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(414, 26);
+            this.layoutControlItem1.Size = new System.Drawing.Size(378, 26);
             this.layoutControlItem1.Text = "Mã kho";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(73, 19);
             // 
@@ -193,7 +193,7 @@
             this.layoutControlItem6.Control = this.txtGhiChu;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 51);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(830, 27);
+            this.layoutControlItem6.Size = new System.Drawing.Size(757, 27);
             this.layoutControlItem6.Text = "Ghi chú";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(73, 19);
             // 
@@ -202,9 +202,9 @@
             this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem5.Control = this.groupBox1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(414, 26);
+            this.layoutControlItem5.Location = new System.Drawing.Point(378, 26);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(416, 25);
+            this.layoutControlItem5.Size = new System.Drawing.Size(379, 25);
             this.layoutControlItem5.Text = "Trạng thái";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(73, 19);
             // 
@@ -215,7 +215,7 @@
             this.cboLoaiKho.Control = this.cbLoaiKho;
             this.cboLoaiKho.Location = new System.Drawing.Point(0, 26);
             this.cboLoaiKho.Name = "cboLoaiKho";
-            this.cboLoaiKho.Size = new System.Drawing.Size(414, 25);
+            this.cboLoaiKho.Size = new System.Drawing.Size(378, 25);
             this.cboLoaiKho.Text = "Loại kho";
             this.cboLoaiKho.TextSize = new System.Drawing.Size(73, 19);
             // 
@@ -224,9 +224,9 @@
             this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem2.Control = this.txtTenKho;
-            this.layoutControlItem2.Location = new System.Drawing.Point(414, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(378, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(416, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(379, 26);
             this.layoutControlItem2.Text = "Tên kho";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(73, 19);
             // 
@@ -239,7 +239,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 98);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(850, 70);
+            this.panel1.Size = new System.Drawing.Size(777, 70);
             this.panel1.TabIndex = 3;
             // 
             // btnThoat
@@ -248,7 +248,7 @@
             this.btnThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.Appearance.Options.UseFont = true;
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(526, 15);
+            this.btnThoat.Location = new System.Drawing.Point(489, 15);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(109, 40);
             this.btnThoat.TabIndex = 4;
@@ -261,7 +261,7 @@
             this.btnRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.Appearance.Options.UseFont = true;
             this.btnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.ImageOptions.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(358, 15);
+            this.btnRefresh.Location = new System.Drawing.Point(321, 15);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(109, 40);
             this.btnRefresh.TabIndex = 3;
@@ -274,7 +274,7 @@
             this.btnSua.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Appearance.Options.UseFont = true;
             this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
-            this.btnSua.Location = new System.Drawing.Point(191, 15);
+            this.btnSua.Location = new System.Drawing.Point(154, 15);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(109, 40);
             this.btnSua.TabIndex = 1;
@@ -287,7 +287,7 @@
             this.btnThem.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Appearance.Options.UseFont = true;
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
-            this.btnThem.Location = new System.Drawing.Point(21, 15);
+            this.btnThem.Location = new System.Drawing.Point(-16, 15);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(109, 40);
             this.btnThem.TabIndex = 0;
@@ -300,7 +300,7 @@
             this.gridControlKho.Location = new System.Drawing.Point(0, 168);
             this.gridControlKho.MainView = this.gridViewKho;
             this.gridControlKho.Name = "gridControlKho";
-            this.gridControlKho.Size = new System.Drawing.Size(850, 338);
+            this.gridControlKho.Size = new System.Drawing.Size(777, 300);
             this.gridControlKho.TabIndex = 4;
             this.gridControlKho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewKho});
@@ -319,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 506);
+            this.ClientSize = new System.Drawing.Size(777, 468);
             this.Controls.Add(this.gridControlKho);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.layoutControl1);

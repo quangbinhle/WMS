@@ -76,14 +76,14 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(809, 50);
+            this.layoutControl1.Size = new System.Drawing.Size(709, 50);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // dateDenNgay
             // 
             this.dateDenNgay.EditValue = null;
-            this.dateDenNgay.Location = new System.Drawing.Point(476, 12);
+            this.dateDenNgay.Location = new System.Drawing.Point(426, 12);
             this.dateDenNgay.Name = "dateDenNgay";
             this.dateDenNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateDenNgay.Properties.Appearance.Options.UseFont = true;
@@ -96,7 +96,7 @@
             this.dateDenNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dateDenNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dateDenNgay.Size = new System.Drawing.Size(321, 26);
+            this.dateDenNgay.Size = new System.Drawing.Size(271, 26);
             this.dateDenNgay.StyleController = this.layoutControl1;
             this.dateDenNgay.TabIndex = 5;
             // 
@@ -116,7 +116,7 @@
             this.dateTuNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dateTuNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dateTuNgay.Size = new System.Drawing.Size(320, 26);
+            this.dateTuNgay.Size = new System.Drawing.Size(270, 26);
             this.dateTuNgay.StyleController = this.layoutControl1;
             this.dateTuNgay.TabIndex = 4;
             // 
@@ -128,7 +128,7 @@
             this.layoutControlItem1,
             this.layoutControlItem2});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(809, 50);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(709, 50);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -138,7 +138,7 @@
             this.layoutControlItem1.Control = this.dateTuNgay;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(394, 30);
+            this.layoutControlItem1.Size = new System.Drawing.Size(344, 30);
             this.layoutControlItem1.Text = "Từ ngày";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(67, 19);
             // 
@@ -147,9 +147,9 @@
             this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem2.Control = this.dateDenNgay;
-            this.layoutControlItem2.Location = new System.Drawing.Point(394, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(344, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(395, 30);
+            this.layoutControlItem2.Size = new System.Drawing.Size(345, 30);
             this.layoutControlItem2.Text = "Đến ngày";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(67, 19);
             // 
@@ -161,7 +161,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(809, 45);
+            this.panel1.Size = new System.Drawing.Size(709, 45);
             this.panel1.TabIndex = 2;
             // 
             // btnRefresh
@@ -186,6 +186,7 @@
             this.btnExcel.Size = new System.Drawing.Size(109, 40);
             this.btnExcel.TabIndex = 5;
             this.btnExcel.Text = "Excel";
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnTimKiem
             // 
@@ -204,22 +205,22 @@
             this.layoutControl3.Controls.Add(this.txtTongTrongLuong);
             this.layoutControl3.Controls.Add(this.txtSoLuong);
             this.layoutControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.layoutControl3.Location = new System.Drawing.Point(0, 444);
+            this.layoutControl3.Location = new System.Drawing.Point(0, 362);
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.Root = this.layoutControlGroup3;
-            this.layoutControl3.Size = new System.Drawing.Size(809, 46);
+            this.layoutControl3.Size = new System.Drawing.Size(709, 46);
             this.layoutControl3.TabIndex = 7;
             this.layoutControl3.Text = "layoutControl3";
             // 
             // txtTongTrongLuong
             // 
-            this.txtTongTrongLuong.Location = new System.Drawing.Point(508, 12);
+            this.txtTongTrongLuong.Location = new System.Drawing.Point(458, 12);
             this.txtTongTrongLuong.Name = "txtTongTrongLuong";
             this.txtTongTrongLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTrongLuong.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtTongTrongLuong.Properties.Appearance.Options.UseFont = true;
             this.txtTongTrongLuong.Properties.Appearance.Options.UseForeColor = true;
-            this.txtTongTrongLuong.Size = new System.Drawing.Size(289, 22);
+            this.txtTongTrongLuong.Size = new System.Drawing.Size(239, 22);
             this.txtTongTrongLuong.StyleController = this.layoutControl3;
             this.txtTongTrongLuong.TabIndex = 5;
             // 
@@ -231,7 +232,7 @@
             this.txtSoLuong.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtSoLuong.Properties.Appearance.Options.UseFont = true;
             this.txtSoLuong.Properties.Appearance.Options.UseForeColor = true;
-            this.txtSoLuong.Size = new System.Drawing.Size(288, 22);
+            this.txtSoLuong.Size = new System.Drawing.Size(238, 22);
             this.txtSoLuong.StyleController = this.layoutControl3;
             this.txtSoLuong.TabIndex = 4;
             // 
@@ -243,7 +244,7 @@
             this.layoutControlItem10,
             this.layoutControlItem11});
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(809, 46);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(709, 46);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItem10
@@ -253,7 +254,7 @@
             this.layoutControlItem10.Control = this.txtSoLuong;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(394, 26);
+            this.layoutControlItem10.Size = new System.Drawing.Size(344, 26);
             this.layoutControlItem10.Text = "Số lượng";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(99, 16);
             // 
@@ -262,9 +263,9 @@
             this.layoutControlItem11.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem11.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem11.Control = this.txtTongTrongLuong;
-            this.layoutControlItem11.Location = new System.Drawing.Point(394, 0);
+            this.layoutControlItem11.Location = new System.Drawing.Point(344, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(395, 26);
+            this.layoutControlItem11.Size = new System.Drawing.Size(345, 26);
             this.layoutControlItem11.Text = "Tổng trọng lượng";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(99, 16);
             // 
@@ -274,7 +275,7 @@
             this.GridQLXuatKho.Location = new System.Drawing.Point(0, 95);
             this.GridQLXuatKho.MainView = this.gridViewQLXuatKho;
             this.GridQLXuatKho.Name = "GridQLXuatKho";
-            this.GridQLXuatKho.Size = new System.Drawing.Size(809, 349);
+            this.GridQLXuatKho.Size = new System.Drawing.Size(709, 267);
             this.GridQLXuatKho.TabIndex = 8;
             this.GridQLXuatKho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewQLXuatKho});
@@ -291,7 +292,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 490);
+            this.ClientSize = new System.Drawing.Size(709, 408);
             this.Controls.Add(this.GridQLXuatKho);
             this.Controls.Add(this.layoutControl3);
             this.Controls.Add(this.panel1);

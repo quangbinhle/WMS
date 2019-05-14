@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoaiRac));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtDonVi = new System.Windows.Forms.ComboBox();
             this.cboLoaiRac = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbtnKhoa = new System.Windows.Forms.RadioButton();
@@ -43,6 +44,7 @@
             this.cboLoaiKho = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
@@ -50,8 +52,6 @@
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.gridControlLoaiRac = new DevExpress.XtraGrid.GridControl();
             this.gridViewLoaiRac = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.txtDonVi = new System.Windows.Forms.ComboBox();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -64,10 +64,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.cboLoaiKho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlLoaiRac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewLoaiRac)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -82,9 +82,21 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(848, 98);
+            this.layoutControl1.Size = new System.Drawing.Size(827, 98);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtDonVi
+            // 
+            this.txtDonVi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtDonVi.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonVi.FormattingEnabled = true;
+            this.txtDonVi.Items.AddRange(new object[] {
+            "Kg"});
+            this.txtDonVi.Location = new System.Drawing.Point(88, 63);
+            this.txtDonVi.Name = "txtDonVi";
+            this.txtDonVi.Size = new System.Drawing.Size(323, 24);
+            this.txtDonVi.TabIndex = 12;
             // 
             // cboLoaiRac
             // 
@@ -97,7 +109,7 @@
             "Rác thải nguy hại"});
             this.cboLoaiRac.Location = new System.Drawing.Point(88, 38);
             this.cboLoaiRac.Name = "cboLoaiRac";
-            this.cboLoaiRac.Size = new System.Drawing.Size(333, 24);
+            this.cboLoaiRac.Size = new System.Drawing.Size(323, 24);
             this.cboLoaiRac.TabIndex = 11;
             // 
             // groupBox1
@@ -105,9 +117,9 @@
             this.groupBox1.Controls.Add(this.rbtnKhoa);
             this.groupBox1.Controls.Add(this.rbtnKichHoat);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(501, 38);
+            this.groupBox1.Location = new System.Drawing.Point(491, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(335, 21);
+            this.groupBox1.Size = new System.Drawing.Size(324, 21);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
@@ -137,21 +149,21 @@
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(502, 63);
+            this.txtGhiChu.Location = new System.Drawing.Point(491, 63);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGhiChu.Properties.Appearance.Options.UseFont = true;
-            this.txtGhiChu.Size = new System.Drawing.Size(334, 22);
+            this.txtGhiChu.Size = new System.Drawing.Size(324, 22);
             this.txtGhiChu.StyleController = this.layoutControl1;
             this.txtGhiChu.TabIndex = 9;
             // 
             // txtTenRac
             // 
-            this.txtTenRac.Location = new System.Drawing.Point(501, 12);
+            this.txtTenRac.Location = new System.Drawing.Point(491, 12);
             this.txtTenRac.Name = "txtTenRac";
             this.txtTenRac.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenRac.Properties.Appearance.Options.UseFont = true;
-            this.txtTenRac.Size = new System.Drawing.Size(335, 22);
+            this.txtTenRac.Size = new System.Drawing.Size(324, 22);
             this.txtTenRac.StyleController = this.layoutControl1;
             this.txtTenRac.TabIndex = 5;
             // 
@@ -161,7 +173,7 @@
             this.txtMaRac.Name = "txtMaRac";
             this.txtMaRac.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaRac.Properties.Appearance.Options.UseFont = true;
-            this.txtMaRac.Size = new System.Drawing.Size(333, 22);
+            this.txtMaRac.Size = new System.Drawing.Size(323, 22);
             this.txtMaRac.StyleController = this.layoutControl1;
             this.txtMaRac.TabIndex = 4;
             // 
@@ -177,7 +189,7 @@
             this.layoutControlItem6,
             this.layoutControlItem3});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(848, 98);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(827, 98);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -187,7 +199,7 @@
             this.layoutControlItem1.Control = this.txtMaRac;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(413, 26);
+            this.layoutControlItem1.Size = new System.Drawing.Size(403, 26);
             this.layoutControlItem1.Text = "Mã rác";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(73, 19);
             // 
@@ -196,9 +208,9 @@
             this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem5.Control = this.groupBox1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(413, 26);
+            this.layoutControlItem5.Location = new System.Drawing.Point(403, 26);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(415, 25);
+            this.layoutControlItem5.Size = new System.Drawing.Size(404, 25);
             this.layoutControlItem5.Text = "Trạng thái";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(73, 19);
             // 
@@ -209,7 +221,7 @@
             this.cboLoaiKho.Control = this.cboLoaiRac;
             this.cboLoaiKho.Location = new System.Drawing.Point(0, 26);
             this.cboLoaiKho.Name = "cboLoaiKho";
-            this.cboLoaiKho.Size = new System.Drawing.Size(413, 25);
+            this.cboLoaiKho.Size = new System.Drawing.Size(403, 25);
             this.cboLoaiKho.Text = "Loại rác";
             this.cboLoaiKho.TextSize = new System.Drawing.Size(73, 19);
             // 
@@ -218,9 +230,9 @@
             this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem2.Control = this.txtTenRac;
-            this.layoutControlItem2.Location = new System.Drawing.Point(413, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(403, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(415, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(404, 26);
             this.layoutControlItem2.Text = "Tên rác";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(73, 19);
             // 
@@ -229,11 +241,22 @@
             this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem6.Control = this.txtGhiChu;
-            this.layoutControlItem6.Location = new System.Drawing.Point(414, 51);
+            this.layoutControlItem6.Location = new System.Drawing.Point(403, 51);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(414, 27);
+            this.layoutControlItem6.Size = new System.Drawing.Size(404, 27);
             this.layoutControlItem6.Text = "Ghi chú";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(73, 19);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem3.Control = this.txtDonVi;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 51);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(403, 27);
+            this.layoutControlItem3.Text = "Đơn vị";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(73, 19);
             // 
             // panel1
             // 
@@ -244,7 +267,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 98);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(848, 70);
+            this.panel1.Size = new System.Drawing.Size(827, 70);
             this.panel1.TabIndex = 4;
             // 
             // btnThoat
@@ -253,7 +276,7 @@
             this.btnThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.Appearance.Options.UseFont = true;
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(544, 15);
+            this.btnThoat.Location = new System.Drawing.Point(533, 15);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(109, 40);
             this.btnThoat.TabIndex = 4;
@@ -266,7 +289,7 @@
             this.btnRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.Appearance.Options.UseFont = true;
             this.btnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.ImageOptions.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(360, 15);
+            this.btnRefresh.Location = new System.Drawing.Point(349, 15);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(109, 40);
             this.btnRefresh.TabIndex = 3;
@@ -279,7 +302,7 @@
             this.btnSua.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Appearance.Options.UseFont = true;
             this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
-            this.btnSua.Location = new System.Drawing.Point(190, 15);
+            this.btnSua.Location = new System.Drawing.Point(179, 15);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(109, 40);
             this.btnSua.TabIndex = 1;
@@ -292,7 +315,7 @@
             this.btnThem.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Appearance.Options.UseFont = true;
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
-            this.btnThem.Location = new System.Drawing.Point(20, 15);
+            this.btnThem.Location = new System.Drawing.Point(9, 15);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(109, 40);
             this.btnThem.TabIndex = 0;
@@ -305,7 +328,7 @@
             this.gridControlLoaiRac.Location = new System.Drawing.Point(0, 168);
             this.gridControlLoaiRac.MainView = this.gridViewLoaiRac;
             this.gridControlLoaiRac.Name = "gridControlLoaiRac";
-            this.gridControlLoaiRac.Size = new System.Drawing.Size(848, 346);
+            this.gridControlLoaiRac.Size = new System.Drawing.Size(827, 297);
             this.gridControlLoaiRac.TabIndex = 5;
             this.gridControlLoaiRac.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLoaiRac});
@@ -320,34 +343,11 @@
             this.gridViewLoaiRac.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridViewLoaiRac_RowCellClick);
             this.gridViewLoaiRac.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridViewLoaiRac_RowCellStyle);
             // 
-            // txtDonVi
-            // 
-            this.txtDonVi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtDonVi.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonVi.FormattingEnabled = true;
-            this.txtDonVi.Items.AddRange(new object[] {
-            "Kg"});
-            this.txtDonVi.Location = new System.Drawing.Point(88, 63);
-            this.txtDonVi.Name = "txtDonVi";
-            this.txtDonVi.Size = new System.Drawing.Size(334, 24);
-            this.txtDonVi.TabIndex = 12;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem3.Control = this.txtDonVi;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 51);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(414, 27);
-            this.layoutControlItem3.Text = "Đơn vị";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(73, 19);
-            // 
             // LoaiRac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 514);
+            this.ClientSize = new System.Drawing.Size(827, 465);
             this.Controls.Add(this.gridControlLoaiRac);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.layoutControl1);
@@ -367,10 +367,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.cboLoaiKho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlLoaiRac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewLoaiRac)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }

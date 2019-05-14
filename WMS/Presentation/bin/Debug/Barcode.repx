@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="18.1.6.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="Report1" PageWidth="850" PageHeight="1100" Version="18.1" DataSource="#Ref-0">
+  <Parameters>
+    <Item1 Ref="3" Description="Parameter1" Name="pBarcode" />
+  </Parameters>
+  <Bands>
+    <Item1 Ref="4" ControlType="TopMarginBand" Name="TopMargin" />
+    <Item2 Ref="5" ControlType="DetailBand" Name="Detail" HeightF="136.375061">
+      <MultiColumn Ref="6" ColumnCount="2" Layout="AcrossThenDown" Mode="UseColumnCount" />
+      <Controls>
+        <Item1 Ref="7" ControlType="XRLabel" Name="label1" Multiline="true" Text="label1" SizeF="253.125,23" LocationFloat="0, 113.375061" Padding="2,2,0,0,96">
+          <ExpressionBindings>
+            <Item1 Ref="8" Expression="[barcode]" PropertyName="Text" EventName="BeforePrint" />
+          </ExpressionBindings>
+        </Item1>
+        <Item2 Ref="9" ControlType="XRBarCode" Name="barCode1" SizeF="253.125,97.83338" LocationFloat="0, 0" Padding="10,10,0,0,100">
+          <Symbology Ref="10" Name="Code128" />
+          <ExpressionBindings>
+            <Item1 Ref="11" Expression="[barcode]" PropertyName="Text" EventName="BeforePrint" />
+          </ExpressionBindings>
+        </Item2>
+      </Controls>
+    </Item2>
+    <Item3 Ref="12" ControlType="BottomMarginBand" Name="BottomMargin" />
+  </Bands>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.ObjectBinding.ObjectDataSource,DevExpress.DataAccess.v18.1" Name="objectDataSource1" Base64="PE9iamVjdERhdGFTb3VyY2UgTmFtZT0ib2JqZWN0RGF0YVNvdXJjZTEiPjxEYXRhU291cmNlIFR5cGU9IkRhdGFBY2Vzcy5CYXJjb2RlTW9kZWwsIERhdGFBY2VzcywgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwiIC8+PC9PYmplY3REYXRhU291cmNlPg==" />
+  </ComponentStorage>
+</XtraReportsLayoutSerializer>

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaoCao));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnInvoice = new DevExpress.XtraEditors.SimpleButton();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
@@ -65,13 +66,26 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnInvoice);
             this.panel1.Controls.Add(this.btnTimKiem);
             this.panel1.Controls.Add(this.btnExcel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(842, 46);
+            this.panel1.Size = new System.Drawing.Size(693, 46);
             this.panel1.TabIndex = 3;
+            // 
+            // btnInvoice
+            // 
+            this.btnInvoice.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvoice.Appearance.Options.UseFont = true;
+            this.btnInvoice.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInvoice.ImageOptions.Image")));
+            this.btnInvoice.Location = new System.Drawing.Point(313, 4);
+            this.btnInvoice.Name = "btnInvoice";
+            this.btnInvoice.Size = new System.Drawing.Size(109, 40);
+            this.btnInvoice.TabIndex = 7;
+            this.btnInvoice.Text = "Report";
+            this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click);
             // 
             // btnTimKiem
             // 
@@ -95,28 +109,29 @@
             this.btnExcel.Size = new System.Drawing.Size(109, 40);
             this.btnExcel.TabIndex = 5;
             this.btnExcel.Text = "Excel";
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // layoutControl3
             // 
             this.layoutControl3.Controls.Add(this.txtTongTrongLuong);
             this.layoutControl3.Controls.Add(this.txtSoLuong);
             this.layoutControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.layoutControl3.Location = new System.Drawing.Point(0, 439);
+            this.layoutControl3.Location = new System.Drawing.Point(0, 401);
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.Root = this.layoutControlGroup3;
-            this.layoutControl3.Size = new System.Drawing.Size(842, 46);
+            this.layoutControl3.Size = new System.Drawing.Size(693, 46);
             this.layoutControl3.TabIndex = 7;
             this.layoutControl3.Text = "layoutControl3";
             // 
             // txtTongTrongLuong
             // 
-            this.txtTongTrongLuong.Location = new System.Drawing.Point(524, 12);
+            this.txtTongTrongLuong.Location = new System.Drawing.Point(450, 12);
             this.txtTongTrongLuong.Name = "txtTongTrongLuong";
             this.txtTongTrongLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTrongLuong.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtTongTrongLuong.Properties.Appearance.Options.UseFont = true;
             this.txtTongTrongLuong.Properties.Appearance.Options.UseForeColor = true;
-            this.txtTongTrongLuong.Size = new System.Drawing.Size(306, 22);
+            this.txtTongTrongLuong.Size = new System.Drawing.Size(231, 22);
             this.txtTongTrongLuong.StyleController = this.layoutControl3;
             this.txtTongTrongLuong.TabIndex = 5;
             // 
@@ -128,7 +143,7 @@
             this.txtSoLuong.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtSoLuong.Properties.Appearance.Options.UseFont = true;
             this.txtSoLuong.Properties.Appearance.Options.UseForeColor = true;
-            this.txtSoLuong.Size = new System.Drawing.Size(304, 22);
+            this.txtSoLuong.Size = new System.Drawing.Size(230, 22);
             this.txtSoLuong.StyleController = this.layoutControl3;
             this.txtSoLuong.TabIndex = 4;
             // 
@@ -140,7 +155,7 @@
             this.layoutControlItem10,
             this.layoutControlItem11});
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(842, 46);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(693, 46);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItem10
@@ -150,7 +165,7 @@
             this.layoutControlItem10.Control = this.txtSoLuong;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(410, 26);
+            this.layoutControlItem10.Size = new System.Drawing.Size(336, 26);
             this.layoutControlItem10.Text = "Số lượng";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(99, 16);
             // 
@@ -159,9 +174,9 @@
             this.layoutControlItem11.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem11.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem11.Control = this.txtTongTrongLuong;
-            this.layoutControlItem11.Location = new System.Drawing.Point(410, 0);
+            this.layoutControlItem11.Location = new System.Drawing.Point(336, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(412, 26);
+            this.layoutControlItem11.Size = new System.Drawing.Size(337, 26);
             this.layoutControlItem11.Text = "Tổng trọng lượng";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(99, 16);
             // 
@@ -171,7 +186,7 @@
             this.GridBaoCao.Location = new System.Drawing.Point(0, 118);
             this.GridBaoCao.MainView = this.gridViewBaoCao;
             this.GridBaoCao.Name = "GridBaoCao";
-            this.GridBaoCao.Size = new System.Drawing.Size(842, 321);
+            this.GridBaoCao.Size = new System.Drawing.Size(693, 283);
             this.GridBaoCao.TabIndex = 8;
             this.GridBaoCao.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewBaoCao});
@@ -191,7 +206,7 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(842, 72);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(693, 72);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -201,7 +216,7 @@
             this.layoutControlItem1.Control = this.groupBox1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(822, 52);
+            this.layoutControlItem1.Size = new System.Drawing.Size(673, 52);
             this.layoutControlItem1.Text = "Loại phiên";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(73, 19);
             // 
@@ -211,7 +226,7 @@
             this.groupBox1.Controls.Add(this.rbtnNhapKho);
             this.groupBox1.Location = new System.Drawing.Point(88, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(742, 48);
+            this.groupBox1.Size = new System.Drawing.Size(593, 48);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -246,7 +261,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(842, 72);
+            this.layoutControl1.Size = new System.Drawing.Size(693, 72);
             this.layoutControl1.TabIndex = 2;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -254,14 +269,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 485);
+            this.ClientSize = new System.Drawing.Size(693, 447);
             this.Controls.Add(this.GridBaoCao);
             this.Controls.Add(this.layoutControl3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.layoutControl1);
             this.Name = "BaoCao";
             this.Text = "Báo cáo";
-            this.Load += new System.EventHandler(this.BaoCao_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
@@ -300,5 +314,6 @@
         private System.Windows.Forms.RadioButton rbtnXuatKho;
         private System.Windows.Forms.RadioButton rbtnNhapKho;
         private DevExpress.XtraEditors.SimpleButton btnTimKiem;
+        private DevExpress.XtraEditors.SimpleButton btnInvoice;
     }
 }

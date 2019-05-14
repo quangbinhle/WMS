@@ -1,10 +1,10 @@
+D:\le quang binh\2019-2020\Bao Cao TN\WMS\Business\bin\Debug\DevExpress.Printing.v18.1.Core.dll
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Business\bin\Debug\Business.exe.config
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Business\bin\Debug\Business.exe
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Business\bin\Debug\Business.pdb
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Business\bin\Debug\DataAcess.dll
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Business\bin\Debug\DevExpress.BonusSkins.v18.1.dll
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Business\bin\Debug\DevExpress.Data.v18.1.dll
-D:\le quang binh\2019-2020\Bao Cao TN\WMS\Business\bin\Debug\DevExpress.Printing.v18.1.Core.dll
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Business\bin\Debug\DevExpress.Sparkline.v18.1.Core.dll
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Business\bin\Debug\DevExpress.Utils.v18.1.dll
 D:\le quang binh\2019-2020\Bao Cao TN\WMS\Business\bin\Debug\DevExpress.XtraBars.v18.1.dll

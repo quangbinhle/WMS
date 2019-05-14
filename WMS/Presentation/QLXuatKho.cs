@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DataAcess;
+using DevExpress.XtraGrid.Columns;
 
 namespace Presentation
 {
@@ -222,6 +223,79 @@ namespace Presentation
             }
             txtTongTrongLuong.Text = tongtrongluong.ToString();
             txtSoLuong.Text = gridViewQLXuatKho.RowCount.ToString();
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            //Creating DataTable
+            DataTable dt = new DataTable();
+
+            //Adding the Columns with gridview devexpress
+            foreach (GridColumn c in gridViewQLXuatKho.Columns)
+            {
+                dt.Columns.Add(c.FieldName, c.ColumnType);
+            }
+
+            //Adding the Rows with gridview devexpress
+            for (int r = 0; r < gridViewQLXuatKho.RowCount; r++)
+            {
+                object[] rowValues = new object[dt.Columns.Count];
+                for (int c = 0; c < dt.Columns.Count; c++)
+                {
+                    rowValues[c] = gridViewQLXuatKho.GetRowCellValue(r, dt.Columns[c].ColumnName);
+                }
+                dt.Rows.Add(rowValues);
+            }
+
+            //Exporting to Excel
+            SaveFileDialog fsave = new SaveFileDialog();
+            //kiem tra duoi 
+            fsave.Filter = "Excel|*.xls|Excel 2010|*.xlsx";
+            fsave.ShowDialog();
+
+            if (fsave.FileName != null)
+            {
+                Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Workbook wb = app.Workbooks.Add(Type.Missing);
+                Microsoft.Office.Interop.Excel._Worksheet sheet = null;
+                try
+                {
+                    sheet = wb.ActiveSheet;
+                    sheet.Name = "WMS_StockOutManagement";
+                    for (int i = 1; i <= dt.Columns.Count; i++)
+                    {
+                        sheet.Cells[1, i] = dt.Columns[i - 1].Caption;
+                    }
+                    for (int i = 1; i <= dt.Rows.Count; i++)
+                    {
+                        sheet.Cells[1 + i, 1] = dt.Rows[i - 1].ItemArray[0];
+                        sheet.Cells[1 + i, 2] = dt.Rows[i - 1].ItemArray[1];
+                        sheet.Cells[1 + i, 3] = dt.Rows[i - 1].ItemArray[2];
+                        sheet.Cells[1 + i, 4] = dt.Rows[i - 1].ItemArray[3];
+                        sheet.Cells[1 + i, 5] = dt.Rows[i - 1].ItemArray[4];
+                        sheet.Cells[1 + i, 6] = dt.Rows[i - 1].ItemArray[5];
+                        sheet.Cells[1 + i, 7] = dt.Rows[i - 1].ItemArray[6];
+                        sheet.Cells[1 + i, 8] = dt.Rows[i - 1].ItemArray[7];
+                        sheet.Cells[1 + i, 9] = dt.Rows[i - 1].ItemArray[8];
+                        //sheet.Cells[1 + i, 10] = dt.Rows[i - 1].ItemArray[9];
+                        //sheet.Cells[1 + i, 11] = dt.Rows[i - 1].ItemArray[10];
+
+                    }
+                    sheet.Columns.AutoFit();
+                    sheet.Rows.AutoFit();
+                    wb.SaveAs(fsave.FileName);
+                    MessageBox.Show("Xuất dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                finally
+                {
+                    app.Quit();
+                    wb = null;
+                }
+            }
         }
     }
 }
